@@ -7,7 +7,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tests.AnimationTest;
 
-public class Rectangles extends BasicGame{
+public class Tutorial extends BasicGame{
 	private float x;
 	private float y;
 	private float speedx;
@@ -15,7 +15,7 @@ public class Rectangles extends BasicGame{
 	
 	
 	
-	public Rectangles(String title) {
+	public Tutorial(String title) {
 		super(title);
 		// TODO Auto-generated constructor stub
 	}
@@ -40,7 +40,7 @@ public class Rectangles extends BasicGame{
 	public void update(GameContainer arg0, int delta) throws SlickException {
 		// TODO Auto-generated method stub
 		this.x += (float)delta/this.speedx;
-		this.y += (float)delta/this.speedy;
+		this.y += (float)delta/this.speedy-0.4;
 		if(x>800) {
 			this.x=-100;
 			this.y=0;
@@ -49,7 +49,7 @@ public class Rectangles extends BasicGame{
 	
 	public static void main(String[] argv) {
 		try {
-			AppGameContainer container = new AppGameContainer(new Rectangles("Rectangles"));
+			AppGameContainer container = new AppGameContainer(new Tutorial("Rectangles"));
 			container.setDisplayMode(800,600,false);
 			container.start();
 		} catch (SlickException e) {
