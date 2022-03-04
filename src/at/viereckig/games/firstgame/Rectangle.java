@@ -1,5 +1,6 @@
 package at.viereckig.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class Rectangle implements Actor{
@@ -26,7 +27,7 @@ public class Rectangle implements Actor{
 		
 	}
 	
-	public void update(int delta) {
+	public void update(GameContainer gameContainer, int delta) {
 		if(this.direction == 0) {
 			this.x += (float)delta/this.speed;
 			
@@ -42,4 +43,5 @@ public class Rectangle implements Actor{
 			}
 		}
 	}
+
 }

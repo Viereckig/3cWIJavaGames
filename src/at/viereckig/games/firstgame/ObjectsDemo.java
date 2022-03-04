@@ -10,11 +10,12 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class ObjectsDemo extends BasicGame{
 	private List<Actor> actors;
-	
+	private Rocket rocket;
 	
 	
 	
@@ -64,14 +65,28 @@ public class ObjectsDemo extends BasicGame{
 			this.actors.add(ellipse);
 		}
 		
+		Rocket rocket = new Rocket();
+		this.rocket = rocket;
+		this.actors.add(rocket);
+		
 	}
 
 	@Override
 	public void update(GameContainer arg0, int delta) throws SlickException {
 		
 		for (Actor actor:this.actors) {
-			actor.update(delta);
+			actor.update(arg0, delta);
 		}
 
+	}
+	
+	
+	
+	@Override
+	public void keyPressed(int key, char c) {
+		if(key == Input.KEY_SPACE) {
+			System.out.println("shoot");
+		}
+		
 	}
 }

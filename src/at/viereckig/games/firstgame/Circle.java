@@ -2,6 +2,7 @@ package at.viereckig.games.firstgame;
 
 import java.util.Random;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class Circle implements Actor{
@@ -24,7 +25,7 @@ public class Circle implements Actor{
 		graphics.drawOval(this.x, this.y, this.diameter, this.diameter);
 	}
 	
-	public void update(int delta) {
+	public void update(GameContainer gameContainer, int delta) {
 		this.y += (float)delta/this.speed;
 		this.diameter += 0.1;
 		if(this.y>600) {
