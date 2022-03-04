@@ -6,7 +6,7 @@ import org.newdawn.slick.Graphics;
 public class Cannonball implements Actor{
 	private float x,y;
 	
-	public Cannonball() {
+	public Cannonball(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}

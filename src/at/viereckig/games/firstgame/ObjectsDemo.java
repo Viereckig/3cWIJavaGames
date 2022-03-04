@@ -86,6 +86,11 @@ public class ObjectsDemo extends BasicGame{
 	public void keyPressed(int key, char c) {
 		if(key == Input.KEY_SPACE) {
 			System.out.println("shoot");
+			Cannonball cb1 = new Cannonball(this.rocket.getX(),this.rocket.getY());
+			this.actors.add(cb1);
+			
+			Cannonball cb2 = new Cannonball(this.rocket.getX()+40,this.rocket.getY());
+			this.actors.add(cb2);
 		}
 		
 	}
